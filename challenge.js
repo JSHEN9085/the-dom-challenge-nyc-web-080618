@@ -6,6 +6,7 @@ const likes = document.querySelector('.likes')
 const pauseButton = document.getElementById('pause')
 const commentsForm = document.getElementById('comment-form');
 const comments = document.getElementById('list');
+const commentButton = document.getElementById('submit');
 
 let count = 0; //starting the count of second;
 let likesCount = {}; //counting the # of likes for each second;
@@ -50,12 +51,16 @@ pauseButton.addEventListener("click", function(event){
     plusButton.disabled = true;
     likeButton.disabled = true;
     pauseButton.innerText = "resume";
+    likeButton.disabled = true;
+    commentButton.disabled = true;
     isPause = !isPause;
   } else {
     minusButton.disabled = false;
     plusButton.disabled = false;
     likeButton.disabled = false;
     pauseButton.innerText = "pause"
+    likeButton.disabled = false;
+    commentButton.disabled = false;
     isPause = !isPause;
   }
 })
